@@ -19,21 +19,27 @@
       <br></br>
     <script>
       function grabData() {
-        collect() {
+        collect() ;{
            $.ajax({
+             type: POST,
              url:"advisecheck.py",
-             context: document.body});}
-           }
-      
+             data: { param: input },
+             success: insertData
+           });
+         }
+      function insertData() {
            setTimeout(function () {
-             if getElementById('windAdvise').innerText = "Wind Advisory is in effect for our area" {
+             if (getElementById('windAdvise').innerText = "Wind Advisory is in effect for our area") {
              getElementById('windAdvise').innerText = "Wind Advisory is in effect for our area."
              getElementById('windAdvise').style.display = 'inline';
            } else {
              getElementById('windAdvise').innerText = "None or no data"
              getElementById('windAdvise').style.display = 'none';
-           }, 5000);
-        }
+           } 5000; 
+        })
+        console.log('it worked');
+      }
+    }
     </script>
   </body>
 </html>
