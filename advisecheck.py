@@ -5,16 +5,11 @@ html = response.text
 file = open("alerts.txt", "w")
 file.write(html)
 
-
-word = html
-if word.find('<h5 class="card-title">Wind Advisory issued') != -1):
-  windadvise = false
+if '<h5 class="card-title">Wind Advisory issued' in html:
+  windadvise = 'Wind Advisory is in effect for our area.'
+  print(windadvise)
+  index = open("index.html").read().format(windadvise='Wind Advisory is in effect for our area')
 else:
-  windadvise = 
-
-index = open("index.html").read().format(bla-bla='something',
-                                        wowo='wawa')
-
-ex.
-
-<h1> Boink {bla-bla:} aaaaaaand {wowo:} </h1>
+  windadvise = 'Operation: FAILED'
+  print(windadvise)
+  index = open("index.html").read().format(windadvise='')
