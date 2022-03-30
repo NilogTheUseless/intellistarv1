@@ -15,17 +15,19 @@
      	<img onload="collect()" src="img/play.png" width="200" height="200">
     </div>
     <div class="wa"
-      <p>{windadvise:}</p>
+      <p id="windAdvise">{windadvise:}</p>
       <br></br>
     <script>
+      function grabData() {
         collect() {
            $.ajax({
              url:"advisecheck.py",
              context: document.body});}
         }
-        
-        test() {
-          
+        setTimeout(function () {
+          if getElementById('windAdvise').innerText = "Wind Advisory is in effect for our area"
+        }, 5000);
+       }
     </script>
   </body>
 </html>
