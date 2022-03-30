@@ -25,7 +25,12 @@
              context: document.body});}
         }
         setTimeout(function () {
-          if getElementById('windAdvise').innerText = "Wind Advisory is in effect for our area"
+          if getElementById('windAdvise').innerText = "Wind Advisory is in effect for our area" {
+            getElementById('windAdvise').innerText = "Wind Advisory is in effect for our area."
+            getElementById('windAdvise').style.display = 'inline';
+          } else {
+            getElementById('windAdvise').innerText = "None or no data"
+            getElementById('windAdvise').style.display = 'none';
         }, 5000);
        }
     </script>
